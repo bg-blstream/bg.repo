@@ -23,7 +23,7 @@ public class TheAnswer extends Activity {
 		TextView answerView = (TextView) findViewById(R.id.answer_view);
 
 		int val = findAnswer();
-		String output = (val == answer) ? "42" : "We may never know";
+		String output = (val == answer) ? "42 or older" : "We may never know";
 		
 		// Set desired text in answerView TextView
 		answerView
@@ -33,7 +33,7 @@ public class TheAnswer extends Activity {
 
 	private int findAnswer() {
 		for (int val : answers) {
-			if (val == answer)
+			if (val >= answer)
 				return val;
 		}
 		return -1;
